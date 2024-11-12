@@ -32,27 +32,18 @@
         #botrix-activity {
             width: 420px;
             height: 360px;
-            top: 10px;
-            left: 440px;
+            top: 380px; /* Se desplaza más abajo */
+            left: 10px;
         }
 
         /* Estilo para el iframe del chat */
         #botrix-chat {
             width: 420px;
-            height: 360px;
+            height: 480px; /* Aumenta la altura para mostrar más del chat */
             bottom: 10px;
             left: 10px;
         }
-    </style>
-</head>
-<body>
-    <!-- Widget de alertas de Botrix -->
-    <iframe id="botrix-alerts" src="https://botrix.live/alerts?bid=hL4jXwuISOTVQTdQVTPC9A"></iframe>
 
-    <!-- Widget de actividad de Botrix -->
-    <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
-
-    <!-- Widget de chat de Botrix -->
-    <iframe id="botrix-chat" src="https://botrix.live/widgets/chat/?bid=hL4jXwuISOTVQTdQVTPC9A&bots=false&emojis=true&hideCommands=false&hideMessages=false&hideMessagesSeconds=14&fontSize=30&trovo=true&twitch=true&youtube=true&kick=false&livespace=false&platformIcon=true&theme=default"></iframe>
-</body>
-</html>
+        /* Modificación para achicar las letras del chat */
+        #botrix-chat iframe {
+            font-size: 18px !
