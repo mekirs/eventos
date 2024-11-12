@@ -17,7 +17,6 @@
         iframe {
             border: none;
             position: absolute;
-            z-index: 1;
         }
 
         /* Estilo para el iframe de alertas */
@@ -30,23 +29,23 @@
 
         /* Estilo para el iframe de actividad */
         #botrix-activity {
-            width: 420px;
-            height: 600px; /* Aumento la altura para mostrar todo el contenido */
-            top: 380px; /* Se mantiene desplazado más abajo */
-            left: 10px;
+            width: 50%; /* Ocupa el 50% del ancho */
+            height: 100%; /* Se ajusta a la altura completa */
+            top: 0;
+            left: 0;
         }
 
         /* Estilo para el iframe del chat */
         #botrix-chat {
-            width: 420px;
-            height: 600px; /* Aumento la altura para que se vea todo el chat */
-            bottom: 10px;
-            left: 10px;
+            width: 50%; /* Ocupa el 50% del ancho */
+            height: 100%; /* Se ajusta a la altura completa */
+            top: 0;
+            left: 50%; /* Empuja el chat al lado derecho */
         }
 
         /* Modificación para achicar más las letras del chat */
         #botrix-chat iframe {
-            font-size: 14px !important; /* Ajuste a un tamaño de fuente aún más pequeño */
+            font-size: 14px !important; /* Ajuste a un tamaño de fuente más pequeño */
         }
     </style>
 </head>
