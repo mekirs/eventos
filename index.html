@@ -31,22 +31,22 @@
         /* Estilo para el iframe de actividad */
         #botrix-activity {
             width: 420px;
-            height: 360px;
-            top: 380px; /* Se desplaza más abajo */
+            height: 600px; /* Aumento la altura para mostrar todo el contenido */
+            top: 380px; /* Se mantiene desplazado más abajo */
             left: 10px;
         }
 
         /* Estilo para el iframe del chat */
         #botrix-chat {
             width: 420px;
-            height: 480px; /* Aumenta la altura para mostrar más del chat */
+            height: 600px; /* Aumento la altura para que se vea todo el chat */
             bottom: 10px;
             left: 10px;
         }
 
-        /* Modificación para achicar las letras del chat */
+        /* Modificación para achicar más las letras del chat */
         #botrix-chat iframe {
-            font-size: 18px !important; /* Ajuste a un tamaño de fuente más pequeño */
+            font-size: 14px !important; /* Ajuste a un tamaño de fuente aún más pequeño */
         }
     </style>
 </head>
@@ -58,6 +58,6 @@
     <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
 
     <!-- Widget de chat de Botrix -->
-    <iframe id="botrix-chat" src="https://botrix.live/widgets/chat/?bid=hL4jXwuISOTVQTdQVTPC9A&bots=false&emojis=true&hideCommands=false&hideMessages=false&hideMessagesSeconds=14&fontSize=18&trovo=true&twitch=true&youtube=true&kick=false&livespace=false&platformIcon=true&theme=default"></iframe>
+    <iframe id="botrix-chat" src="https://botrix.live/widgets/chat/?bid=hL4jXwuISOTVQTdQVTPC9A&bots=false&emojis=true&hideCommands=false&hideMessages=false&hideMessagesSeconds=14&fontSize=14&trovo=true&twitch=true&youtube=true&kick=false&livespace=false&platformIcon=true&theme=default"></iframe>
 </body>
 </html>
