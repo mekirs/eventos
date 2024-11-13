@@ -9,11 +9,10 @@
         body {
             margin: 0;
             overflow: hidden;
-            width: 1280px;
-            height: 720px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            width: 100vw;
+            height: 100vh;
         }
 
         /* Estilo para los iframes */
@@ -21,38 +20,40 @@
             border: none;
         }
 
-        /* Estilo para el iframe de alertas */
+        /* Estilo para el iframe de alertas detrás del activity feed */
         #botrix-alerts {
-            width: 420px;
-            height: 360px;
+            width: 100%;
+            height: 100%;
             position: absolute;
-            top: 40px; /* Desplazado un poco hacia abajo */
-            left: 10px;
+            top: 0;
+            left: 0;
+            z-index: 1; /* Aparece detrás del activity feed */
         }
 
-        /* Estilos para el contenedor de chat y actividad */
+        /* Contenedor de chat y actividad */
         #chat-activity-container {
-            width: 100%;
-            height: calc(100% - 400px); /* Resta el espacio del iframe de alertas */
             display: flex;
             flex-direction: column;
+            width: 100%;
+            height: 100%;
+            z-index: 2; /* Aparece delante de las alertas */
         }
 
         /* Estilo para el iframe del chat */
         #botrix-chat {
-            width: 100%; /* Ocupa el 100% del ancho */
-            height: 50%; /* Ocupa el 50% de la altura del contenedor */
+            width: 100%;
+            height: 50%; /* Ocupa la mitad superior del contenedor */
         }
 
         /* Estilo para el iframe de actividad */
         #botrix-activity {
-            width: 100%; /* Ocupa el 100% del ancho */
-            height: 50%; /* Ocupa el 50% de la altura del contenedor */
+            width: 100%;
+            height: 50%; /* Ocupa la mitad inferior del contenedor */
         }
 
-        /* Modificación para achicar más las letras del chat */
+        /* Modificación para achicar las letras del chat */
         #botrix-chat iframe {
-            font-size: 14px !important; /* Ajuste a un tamaño de fuente más pequeño */
+            font-size: 14px !important;
         }
     </style>
 </head>
