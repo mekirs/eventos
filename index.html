@@ -11,36 +11,43 @@
             overflow: hidden;
             width: 1280px;
             height: 720px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         /* Estilo para los iframes */
         iframe {
             border: none;
-            position: absolute;
         }
 
         /* Estilo para el iframe de alertas */
         #botrix-alerts {
             width: 420px;
             height: 360px;
+            position: absolute;
             top: 40px; /* Desplazado un poco hacia abajo */
             left: 10px;
         }
 
-        /* Estilo para el iframe de actividad */
-        #botrix-activity {
-            width: 50%; /* Ocupa el 50% del ancho */
-            height: 100%; /* Se ajusta a la altura completa */
-            top: 40px; /* Desplazado un poco hacia abajo */
-            left: 0;
+        /* Estilos para el contenedor de chat y actividad */
+        #chat-activity-container {
+            width: 100%;
+            height: calc(100% - 400px); /* Resta el espacio del iframe de alertas */
+            display: flex;
+            flex-direction: column;
         }
 
         /* Estilo para el iframe del chat */
         #botrix-chat {
-            width: 50%; /* Ocupa el 50% del ancho */
-            height: 100%; /* Se ajusta a la altura completa */
-            top: 40px; /* Desplazado un poco hacia abajo */
-            left: 50%; /* Empuja el chat al lado derecho */
+            width: 100%; /* Ocupa el 100% del ancho */
+            height: 50%; /* Ocupa el 50% de la altura del contenedor */
+        }
+
+        /* Estilo para el iframe de actividad */
+        #botrix-activity {
+            width: 100%; /* Ocupa el 100% del ancho */
+            height: 50%; /* Ocupa el 50% de la altura del contenedor */
         }
 
         /* Modificación para achicar más las letras del chat */
@@ -53,10 +60,13 @@
     <!-- Widget de alertas de Botrix -->
     <iframe id="botrix-alerts" src="https://botrix.live/alerts?bid=hL4jXwuISOTVQTdQVTPC9A"></iframe>
 
-    <!-- Widget de actividad de Botrix -->
-    <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
+    <!-- Contenedor para los widgets de chat y actividad -->
+    <div id="chat-activity-container">
+        <!-- Widget de chat de Botrix -->
+        <iframe id="botrix-chat" src="https://botrix.live/widgets/chat/?bid=hL4jXwuISOTVQTdQVTPC9A&bots=false&emojis=true&hideCommands=false&hideMessages=false&hideMessagesSeconds=14&fontSize=14&trovo=true&twitch=true&youtube=true&kick=false&livespace=false&platformIcon=true&theme=default"></iframe>
 
-    <!-- Widget de chat de Botrix -->
-    <iframe id="botrix-chat" src="https://botrix.live/widgets/chat/?bid=hL4jXwuISOTVQTdQVTPC9A&bots=false&emojis=true&hideCommands=false&hideMessages=false&hideMessagesSeconds=14&fontSize=14&trovo=true&twitch=true&youtube=true&kick=false&livespace=false&platformIcon=true&theme=default"></iframe>
+        <!-- Widget de actividad de Botrix -->
+        <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
+    </div>
 </body>
 </html>
