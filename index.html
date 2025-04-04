@@ -5,59 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Integración de Widgets de Botrix</title>
     <style>
+        /* Estilos para el contenedor principal */
         body {
             margin: 0;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
             width: 100vw;
             height: 100vh;
-            position: relative;
-            background-color: #000;
         }
 
+        /* Estilo para los iframes */
         iframe {
             border: none;
         }
 
-        /* Chat de fondo */
-        #botrix-chat {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
+        /* Estilo para el iframe de Chat Overlay */
+        #chat-overlay {
+            width: 100%;
+            height: 20%; /* Ajusta la altura del overlay */
         }
 
-        /* Alertas */
+        /* Estilo para el iframe de alertas detrás del activity feed */
         #botrix-alerts {
-            width: 20vw;
-            height: 15vh;
+            width: 300px;  /* Tamaño reducido en ancho */
+            height: 200px; /* Tamaño reducido en alto */
             position: absolute;
-            bottom: 32vh; /* Aún en su lugar */
-            right: 1vw;
-            z-index: 1;
-            opacity: 0.85;
+            top: 10px;
+            left: 10px;
+            z-index: 1; /* Aparece detrás del activity feed */
+            opacity: 0.8; /* Ligera transparencia */
         }
 
-        /* Feed de actividad más arriba */
+        /* Contenedor de chat y actividad */
+        #chat-activity-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 80%; /* Resta el espacio del chat overlay */
+            z-index: 2; /* Aparece delante de las alertas */
+        }
+
+        /* Estilo para el iframe del chat */
+        #botrix-chat {
+            width: 100%;
+            height: 50%; /* Se ajusta para compensar el chat overlay */
+        }
+
+        /* Estilo para el iframe de actividad */
         #botrix-activity {
-            width: 35vw;
-            height: 22vh;
-            position: absolute;
-            bottom: 14vh; /* Subido más cerca del top */
-            right: 1vw;
-            z-index: 2;
+            width: 100%;
+            height: 30%; /* Mantiene su tamaño original */
         }
     </style>
 </head>
 <body>
-    <!-- Chat -->
-    <iframe id="botrix-chat" src="https://streamchat.colinhorn.co.uk/"></iframe>
-
-    <!-- Alertas -->
+    <!-- Widget de Chat Overlay en la parte superior -->
+    <iframe id="chat-overlay" src="https://chatoverlay.colinhorn.co.uk/?tiktok=mekirs&badges=true&monochrome=false"></iframe>
+    
+    <!-- Widget de alertas de Botrix (más pequeño) -->
     <iframe id="botrix-alerts" src="https://botrix.live/alerts?bid=hL4jXwuISOTVQTdQVTPC9A"></iframe>
 
-    <!-- Feed de actividad más arriba -->
-    <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
+    <!-- Contenedor para los widgets de chat y actividad -->
+    <div id="chat-activity-container">
+        <!-- Widget de chat de Botrix -->
+        <iframe id="botrix-chat" src="https://botrix.live/widgets/chat/?bid=hL4jXwuISOTVQTdQVTPC9A&bots=false&emojis=true&hideCommands=false&hideMessages=false&hideMessagesSeconds=10&fontSize=20&trovo=true&twitch=true&youtube=true&kick=false&livespace=true&platformIcon=true&theme=default&ignoredUsers=chamu%2C%20jarvis%2C"></iframe>
+
+        <!-- Widget de actividad de Botrix -->
+        <iframe id="botrix-activity" src="https://botrix.live/widgets/activityfeed/"></iframe>
+    </div>
 </body>
 </html>
